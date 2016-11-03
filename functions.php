@@ -1,6 +1,32 @@
 <?php
+
+// creating widets
+function create_widget($name, $id, $description) {
+    register_sidebar(array(
+      'name' => __( $name ),
+      'id'   => $id,
+      'description' => __( $description ),
+      'before_widget' => '<div class="widget addclass">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>'
+    ));
+}
+
+create_widget( 'Front Page Left', 'front-left', 'Displays on the left of the hompage');
+create_widget( 'Front Page Center', 'front-center', 'Displays on the center of the hompage');
+create_widget( 'Front Page Right', 'front-right', 'Displays on the right of the hompage');
+
+
 // Register Custom Navigation Walker
 require_once('wp_bootstrap_navwalker.php');
+
+// activate google fonts
+function tutsplus_add_google_fonts() {
+  wp_register_style( 'googleFonts', 'https://fonts.googleapis.com/css?family=Shrikhand');
+  wp_enqueue_style( 'googleFonts');
+}
+add_action( 'wp_enqueue_scripts', 'tutsplus_add_google_fonts' );
 
 /*menus*/
 add_theme_support( 'menus' );

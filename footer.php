@@ -1,7 +1,7 @@
 <hr>
 
-<footer>
-  <p>&copy; Company 2016</p>
+<footer class='footer'>
+ <p>&copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?></p>
 </footer>
 </div> <!-- /container -->
 
