@@ -12,6 +12,7 @@
     <?php get_header(); ?>
 
     <div class="container">
+      [category.php]
       <div class="row">
         <div class="col-md-6">
           <!-- <h2>page.php</h2> -->

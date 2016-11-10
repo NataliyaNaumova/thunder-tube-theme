@@ -12,6 +12,7 @@
     <?php get_header(); ?>
 
     <div class="container">
+      [single.php]
       <div class="row">
         <div class="col-md-6">
           <!-- <h2>page.php</h2> -->
@@ -20,6 +21,15 @@
           <div class="page-header">
             <!-- the_title() is WP function that shows the title of the post -->
             <h1><?php the_title(); ?></h1>
+            [more code]
+            <p><em>By <?php the_author(); ?>
+              on <?php echo the_time('l, F jS, Y'); ?>
+              in <?php the_category( ', ' ); ?>
+              <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></em>
+            </p>
+            <hr>
+            <?php comments_template(); ?>
+[more code]
           </div>
           <!-- WP function that outputs post content -->
           <?php the_content(); ?>

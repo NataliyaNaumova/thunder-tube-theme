@@ -8,14 +8,17 @@ function create_widget($name, $id, $description) {
       'description' => __( $description ),
       'before_widget' => '<div class="widget addclass">',
       'after_widget' => '</div>',
-      'before_title' => '<h3>',
-      'after_title' => '</h3>'
+      'before_title' => '<h2>',
+      'after_title' => '</h2>'
     ));
 }
 
 create_widget( 'Front Page Left', 'front-left', 'Displays on the left of the hompage');
 create_widget( 'Front Page Center', 'front-center', 'Displays on the center of the hompage');
 create_widget( 'Front Page Right', 'front-right', 'Displays on the right of the hompage');
+
+//sidebar
+create_widget( 'Page Sidebar', 'page', 'Displays on side of pages with sidebar');
 
 
 // Register Custom Navigation Walker
@@ -43,7 +46,7 @@ add_action( 'init', 'register_theme_menus' );
 /* add css*/
 function theme_styles() {
     wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.min.css' );
-    wp_enqueue_style( 'jumbotron_css', get_template_directory_uri() . '/css/jumbotron.css' );
+    wp_enqueue_style( 'style_css', get_template_directory_uri() . '/css/style.css' );
     wp_enqueue_style( 'main.css', get_template_directory_uri() . '/style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
